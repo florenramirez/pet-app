@@ -5,13 +5,12 @@
     </nav>
     <div>
       <a href='/' class="text-decoration-none text-dark">
-      <PetList />
       </a>
     </div>
     <!-- Add Pet -->
   <div class="home-view-container">
-    <button @click="togglePetForm" class="btn btn-primary mb-5">Add New Pet</button>
-    <b-form @submit.prevent="postData" v-if="showPetForm">
+    <!-- <button @click="togglePetForm" class="btn btn-primary">Add New Pet</button> -->
+    <b-form @submit.prevent="postData" >
       <b-form-group id="exampleInputGroup2" label="Pet's Name:" label-for="exampleInput2">
         <b-form-input
           id="exampleInput2"
@@ -67,7 +66,6 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import PetList from '../components/PetList'
 
 Vue.use(VueAxios, axios)
 // import { mapActions } from 'vuex'
@@ -75,11 +73,10 @@ Vue.use(VueAxios, axios)
 export default {
   name: 'Home',
   components: {
-    PetList
+
   },
   data () {
     return {
-      showPetForm: false,
       posts: {
         name: null,
         kind: null,
@@ -91,11 +88,8 @@ export default {
     }
   },
   methods: {
-    togglePetForm () {
-      this.showPetForm = !this.showPetForm
-    },
     postData () {
-      this.axios.post('http://api-pets.fituapp.com/api/v1/pets?token=' + token , this.posts)
+      this.axios.post('http://api-pets.fituapp.com/api/v1/pets?token=' + token, this.posts)
         .then((res) => {
           console.warn(res)
         })
