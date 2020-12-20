@@ -95,7 +95,7 @@ export default {
       this.showPetForm = !this.showPetForm
     },
     postData () {
-      this.axios.post('http://api-pets.fituapp.com/api/v1/pets?token=' + token , this.posts)
+      this.axios.post('http://api-pets.fituapp.com/api/v1/pets?token=d38e99d9790733c939e88698afbc30b6', this.posts)
         .then((res) => {
           console.warn(res)
         })

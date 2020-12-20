@@ -71,7 +71,7 @@ export default {
       this.showEditForm = !this.showEditForm
     },
     getData () {
-      axios.get('http://api-pets.fituapp.com/api/v1/pets?token=' + token)
+      axios.get('http://api-pets.fituapp.com/api/v1/pets?token=d38e99d9790733c939e88698afbc30b6')
         .then((res) => {
           this.list = res.data
         })

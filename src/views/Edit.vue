@@ -96,7 +96,7 @@ export default {
   },
   methods: {
     getData () {
-      axios.get('http://api-pets.fituapp.com/api/v1/pets?token=' + token)
+      axios.get('http://api-pets.fituapp.com/api/v1/pets?token=d38e99d9790733c939e88698afbc30b6')
         .then((res) => {
           this.list = res.data
         })
@@ -105,7 +105,7 @@ export default {
         })
     },
     editData (id) {
-      this.axios.put(`http://api-pets.fituapp.com/api/v1/pets/${id}/?token=` + token, this.items)
+      this.axios.put(`http://api-pets.fituapp.com/api/v1/pets/${id}/?token=d38e99d9790733c939e88698afbc30b6`, this.items)
         .then((res) => {
           this.items = res.data
           console.warn(this.items)
